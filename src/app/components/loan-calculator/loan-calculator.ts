@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './loan-calculator.html',
   styleUrls: ['./loan-calculator.css']
 })
-export class LoanCalculatorComponent {
+export class LoanCalculatorComponent implements OnInit {
   amount: number = 500000;
   rate: number = 5.5;
   years: number = 30;
@@ -18,6 +18,10 @@ export class LoanCalculatorComponent {
   result: number | null = null;
   totalInterest: number | null = null;
   totalRepayment: number | null = null;
+
+  ngOnInit() {
+    this.calculate();
+  }
 
   calculate() {
     const principal = this.amount;

@@ -24,25 +24,37 @@
   gap: 12px;
 }
 
-.logo-text {
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--primary);
+.logo-text-wrapper {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  line-height: 1;
 }
 
-.logo-icon {
-  background: linear-gradient(135deg, var(--secondary) 0%, #059669 100%);
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  display: inline-block;
+.logo-text-main {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: -0.03em;
+  background: linear-gradient(to right, var(--primary), var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.logo-accent {
+.logo-text-sub {
+  font-size: 10px;
+  font-weight: 700;
   color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+.logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .desktop-nav ul {

@@ -19,22 +19,33 @@
   gap: 10px;
 }
 
-.footer-logo .logo-icon {
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, var(--secondary) 0%, #059669 100%);
-  border-radius: 8px;
+.footer-logo .logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 8px;
 }
 
-.footer-logo .logo-text {
+.logo-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-text-main {
   font-size: 28px;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--white);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
-.footer-logo .logo-accent {
+.logo-text-sub {
+  font-size: 10px;
+  font-weight: 700;
   color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 4px;
 }
 
 .footer-desc {
@@ -59,9 +70,9 @@
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--white);
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
 }
 
 .social-link:hover {

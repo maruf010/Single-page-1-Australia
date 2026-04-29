@@ -15,5 +15,5 @@ import { FooterComponent } from './components/footer/footer';
   styleUrls: ['./app.css']
 })
 export class App {
-  title = 'MortgagePro';
+  title = 'Gourab’s Home Brokerage Solution';
 }
