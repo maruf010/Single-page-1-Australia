@@ -1,0 +1,145 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  padding: 16px 0;
+  transition: all 0.3s ease;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-text {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, var(--secondary) 0%, #059669 100%);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.logo-accent {
+  color: var(--secondary);
+}
+
+.desktop-nav ul {
+  display: flex;
+  gap: 40px;
+}
+
+.desktop-nav a {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-main);
+  transition: all 0.3s;
+  position: relative;
+  padding: 8px 0;
+}
+
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary);
+  transition: width 0.3s;
+}
+
+.desktop-nav a:hover {
+  color: var(--secondary);
+}
+
+.desktop-nav a:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: var(--light-gray);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobile-menu-btn span {
+  width: 20px;
+  height: 2px;
+  background-color: var(--primary);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 30px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-bottom: 2px solid var(--secondary);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-nav a {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none;
+  }
+  .header-actions .btn {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+}

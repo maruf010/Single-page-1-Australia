@@ -1,0 +1,20 @@
+<section id="faq" class="faq">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-desc">Got questions? We've got answers to the most common mortgage queries.</p>
+    
+    <div class="faq-container">
+      @for (faq of faqs; track $index) {
+        <div class="faq-item" [class.active]="activeIndex === $index">
+          <div class="faq-question" (click)="toggleFaq($index)">
+            <h3>{{ faq.question }}</h3>
+            <span class="faq-icon">{{ activeIndex === $index ? '−' : '+' }}</span>
+          </div>
+          <div class="faq-answer" [class.show]="activeIndex === $index">
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

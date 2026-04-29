@@ -1,0 +1,67 @@
+<section id="calculator" class="calculator">
+  <div class="container">
+    <h2 class="section-title">Smart Loan Calculator</h2>
+    <p class="section-desc">Estimate your repayments instantly with our interactive tool. Adjust the sliders to see how your loan details affect your regular payments.</p>
+    
+    <div class="calc-wrapper">
+      <div class="calc-form">
+        <h3>Adjust Loan Details</h3>
+        
+        <div class="form-group">
+          <label>
+            <span>Loan Amount</span>
+            <span class="label-value">{{ amount | currency:'USD':'symbol':'1.0-0' }}</span>
+          </label>
+          <input type="range" class="range-slider" [(ngModel)]="amount" min="100000" max="2000000" step="10000" (input)="calculate()">
+        </div>
+        
+        <div class="form-group">
+          <label>
+            <span>Interest Rate</span>
+            <span class="label-value">{{ rate }}%</span>
+          </label>
+          <input type="range" class="range-slider" [(ngModel)]="rate" min="1" max="10" step="0.1" (input)="calculate()">
+        </div>
+        
+        <div class="form-group">
+          <label>
+            <span>Loan Term</span>
+            <span class="label-value">{{ years }} Years</span>
+          </label>
+          <input type="range" class="range-slider" [(ngModel)]="years" min="1" max="35" step="1" (input)="calculate()">
+        </div>
+        
+        <div class="form-group">
+          <label>Repayment Frequency</label>
+          <select class="form-control" [(ngModel)]="frequency" (change)="calculate()" style="background: white;">
+            <option value="weekly">Weekly</option>
+            <option value="fortnightly">Fortnightly</option>
+            <option value="monthly">Monthly</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="calc-result">
+        <div class="result-label">Estimated {{frequency}} Payment</div>
+        <div class="result-amount">{{ (result || 0) | currency:'USD':'symbol':'1.0-0' }}</div>
+        
+        <div class="result-details">
+          <div class="detail-row">
+            <span>Total Principal</span>
+            <span>{{ amount | currency:'USD':'symbol':'1.0-0' }}</span>
+          </div>
+          <div class="detail-row">
+            <span>Total Interest</span>
+            <span>{{ (totalInterest || 0) | currency:'USD':'symbol':'1.0-0' }}</span>
+          </div>
+          <div class="detail-row" style="margin-top: 24px; padding-top: 24px; border-top: 1px dashed rgba(255,255,255,0.2);">
+            <span style="color: var(--white); font-weight: 700;">Total Repayment</span>
+            <span style="color: var(--secondary); font-size: 20px; font-weight: 700;">{{ (totalRepayment || 0) | currency:'USD':'symbol':'1.0-0' }}</span>
+          </div>
+        </div>
+        
+        <a href="#contact" class="btn btn-primary btn-result">Get Pre-Approved Now</a>
+      </div>
+    </div>
+  </div>
+</section>

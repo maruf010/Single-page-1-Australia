@@ -1,0 +1,41 @@
+<header class="header">
+  <div class="container header-content">
+    <a routerLink="/" class="logo">
+      <div class="logo-icon"></div>
+      <span class="logo-text">Mortgage<span class="logo-accent">Pro</span></span>
+    </a>
+    
+    <nav class="desktop-nav">
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/home-loan">Home Loans</a></li>
+        <li><a routerLink="/refinance">Refinance</a></li>
+        <li><a routerLink="/calculator">Calculator</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="header-actions">
+      <a routerLink="/contact" class="btn btn-primary">Get Free Consultation</a>
+      <button class="mobile-menu-btn" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  @if (isMenuOpen) {
+    <div class="mobile-nav">
+      <ul>
+        <li><a routerLink="/" (click)="toggleMenu()">Home</a></li>
+        <li><a routerLink="/about" (click)="toggleMenu()">About</a></li>
+        <li><a routerLink="/home-loan" (click)="toggleMenu()">Home Loans</a></li>
+        <li><a routerLink="/refinance" (click)="toggleMenu()">Refinance</a></li>
+        <li><a routerLink="/calculator" (click)="toggleMenu()">Calculator</a></li>
+        <li><a routerLink="/contact" (click)="toggleMenu()">Contact</a></li>
+      </ul>
+    </div>
+  }
+</header>
